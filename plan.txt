@@ -1,0 +1,40 @@
+clicky game
+
+necessary features
+
+click count
+can trade clicks for items that boost click rate
+passive click rate
+
+
+possible features
+
+menu for different clicking challenges ( road to million clicks? bilion clicks?)
+graph of click rate
+different graphs {linear/ logarithmic)
+graded items by colour (common, uncommon, rare, etc)
+
+
+classes: active item, passive item, surprise item, outcomes
+
+properties 4 active:
+Id
+Name
+cost
+click value increase
+
+passive item:
+name
+id
+cost
+passive clicks
+
+surprise item:
+name
+id
+cost
+Random outcome
+
+
+
+
