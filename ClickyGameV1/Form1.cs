@@ -52,19 +52,19 @@ namespace ClickyGameV1
             const int PITEM_ID_154 = 10;
             const int PITEM_ID_20 = 11;
 
-            ActiveItems.Add(new ActiveItem(2, AITEM_ID_2, "Double Your Money: 500", 5));
-            ActiveItems.Add(new ActiveItem(4, AITEM_ID_4, "Double Your Money: 1,000", 5));
-            ActiveItems.Add(new ActiveItem(8, AITEM_ID_8, "Double Your Money: 2,000", 5));
-            ActiveItems.Add(new ActiveItem(16, AITEM_ID_16, "Double Your Money: 4,000", 5));
-            ActiveItems.Add(new ActiveItem(32, AITEM_ID_32, "Double Your Money: 8,000", 5));
-            ActiveItems.Add(new ActiveItem(64, AITEM_ID_64, "Double Your Money: 16,000", 5));
-            ActiveItems.Add(new ActiveItem(128, AITEM_ID_128, "Double Your Money: 32,000", 5));
-            ActiveItems.Add(new ActiveItem(256, AITEM_ID_256, "Double Your Money: 64,000", 5));
-            ActiveItems.Add(new ActiveItem(512, AITEM_ID_512, "Double Your Money: 128,000", 5));
-            ActiveItems.Add(new ActiveItem(1024, AITEM_ID_1024, "Double Your Money: 256,000", 5));
-            ActiveItems.Add(new ActiveItem(2056, AITEM_ID_2048, "Double Your Money: 512,000", 5));
+            ActiveItems.Add(new ActiveItem(2, AITEM_ID_2, "Double Your Money: 500", 500));
+            ActiveItems.Add(new ActiveItem(4, AITEM_ID_4, "Double Your Money: 1,000", 1000));
+            ActiveItems.Add(new ActiveItem(8, AITEM_ID_8, "Double Your Money: 2,000", 2000));
+            ActiveItems.Add(new ActiveItem(16, AITEM_ID_16, "Double Your Money: 4,000", 4000));
+            ActiveItems.Add(new ActiveItem(32, AITEM_ID_32, "Double Your Money: 8,000", 8000));
+            ActiveItems.Add(new ActiveItem(64, AITEM_ID_64, "Double Your Money: 16,000", 16000));
+            ActiveItems.Add(new ActiveItem(128, AITEM_ID_128, "Double Your Money: 32,000", 32000));
+            ActiveItems.Add(new ActiveItem(256, AITEM_ID_256, "Double Your Money: 64,000", 64000));
+            ActiveItems.Add(new ActiveItem(512, AITEM_ID_512, "Double Your Money: 128,000", 128000));
+            ActiveItems.Add(new ActiveItem(1024, AITEM_ID_1024, "Double Your Money: 256,000", 256000));
+            ActiveItems.Add(new ActiveItem(2056, AITEM_ID_2048, "Double Your Money: 512,000", 512000));
 
-            PassiveItems.Add(new PassiveItem(1, PITEM_ID_01, "Poverty Wages: 300", 3));
+            PassiveItems.Add(new PassiveItem(0.1, PITEM_ID_01, "Poverty Wages: 300", 300));
             PassiveItems.Add(new PassiveItem(0.5, PITEM_ID_05, "Pity Wages: 900", 900));
             PassiveItems.Add(new PassiveItem(1, PITEM_ID_1, "Minimum Wage: 1,500", 1500));
             PassiveItems.Add(new PassiveItem(1.7, PITEM_ID_17, "Living Wage: 2,000", 2000));
