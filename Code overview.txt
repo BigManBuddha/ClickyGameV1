@@ -1,0 +1,1 @@
+Code I've created is anything starting with ClickyGameEngine\Models and ClickyGameV1\Program.cs. The rest is pre generated.
