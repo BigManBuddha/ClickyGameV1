@@ -24,8 +24,10 @@ namespace ClickyGameV1
         public Form1()
         {
             InitializeComponent();
+            //Create a two lists of active and passive items
             List<ActiveItem> ActiveItems = new List<ActiveItem>();
             List<PassiveItem> PassiveItems = new List<PassiveItem>();
+            // add titles to each listbox and set the id for each object to a constant value
             listbox_PassiveItems.Items.Add("Passive Items\n");
             listBox1.Items.Add("Active Items\n");
             const int AITEM_ID_2 = 1;
@@ -51,7 +53,7 @@ namespace ClickyGameV1
             const int PITEM_ID_123 = 9;
             const int PITEM_ID_154 = 10;
             const int PITEM_ID_20 = 11;
-
+            // add an instantiations of objects to each list
             ActiveItems.Add(new ActiveItem(2, AITEM_ID_2, "Double Your Money: 500", 500));
             ActiveItems.Add(new ActiveItem(4, AITEM_ID_4, "Double Your Money: 1,000", 1000));
             ActiveItems.Add(new ActiveItem(8, AITEM_ID_8, "Double Your Money: 2,000", 2000));
@@ -62,7 +64,7 @@ namespace ClickyGameV1
             ActiveItems.Add(new ActiveItem(256, AITEM_ID_256, "Double Your Money: 64,000", 64000));
             ActiveItems.Add(new ActiveItem(512, AITEM_ID_512, "Double Your Money: 128,000", 128000));
             ActiveItems.Add(new ActiveItem(1024, AITEM_ID_1024, "Double Your Money: 256,000", 256000));
-            ActiveItems.Add(new ActiveItem(2056, AITEM_ID_2048, "Double Your Money: 512,000", 512000));
+            ActiveItems.Add(new ActiveItem(2048, AITEM_ID_2048, "Double Your Money: 512,000", 512000));
 
             PassiveItems.Add(new PassiveItem(0.1, PITEM_ID_01, "Poverty Wages: 300", 300));
             PassiveItems.Add(new PassiveItem(0.5, PITEM_ID_05, "Pity Wages: 900", 900));
@@ -75,7 +77,7 @@ namespace ClickyGameV1
             PassiveItems.Add(new PassiveItem(12.3, PITEM_ID_123, "Successful Entrepeneur: 100,000", 100000));
             PassiveItems.Add(new PassiveItem(15.4, PITEM_ID_154, "Financial Independence: 250,000", 250000));
             PassiveItems.Add(new PassiveItem(20, PITEM_ID_20, "P Factory: 500,000", 500000));
-
+            // show lists in listboxes
             foreach (ActiveItem activeItem in ActiveItems)
             {
                 listBox1.Items.Add(activeItem);
@@ -90,16 +92,11 @@ namespace ClickyGameV1
         }
 
         public void Form1_Load(object sender, EventArgs e)
-        {
-
-
-
-
-
+        { 
         }
 
 
-
+        // when the 'click' button is pressed increase it by a value
         private void btn_Click_Click(object sender, EventArgs e)
         {
             if(lbl_clickValue.Text == "")
@@ -111,7 +108,7 @@ namespace ClickyGameV1
             clicks += increase;
             lbl_clickValue.Text = clicks.ToString("#");
         }
-
+        // when the 'surprise item' button is clicked increase the total amount of clicks by a set value between -1000 and 1000
         private void btn_SurpriseItem1_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
@@ -132,7 +129,7 @@ namespace ClickyGameV1
 
 
         }
-
+        // when the second 'surprise item' is clicked multiply it by a percentage value between -300% and 300%
         private void button2_Click(object sender, EventArgs e)
         {
             Random rand = new Random();
@@ -148,7 +145,7 @@ namespace ClickyGameV1
                 lblDescription.Text = description;
             }
         }
-
+        // when the 'buy' button is clicked buy a item from a list then remove it
         private void Btn_Buy_Click(object sender, EventArgs e)
         {
             
@@ -157,6 +154,7 @@ namespace ClickyGameV1
             PassiveItem passiveItem = listbox_PassiveItems.SelectedItem as PassiveItem;
             ActiveItem activeItem = listBox1.SelectedItem as ActiveItem;
             double clicks = double.Parse(lbl_clickValue.Text);
+            // if an active item is selected do the following
             if (listBox1.SelectedItem != null)
             {
                 
@@ -169,6 +167,7 @@ namespace ClickyGameV1
                 listBox1.ClearSelected();
                 
             }
+            //if a passive item is second do the following
             if (listbox_PassiveItems.SelectedItem != null)
             {
 
@@ -186,7 +185,11 @@ namespace ClickyGameV1
                 timer1.Start();
                 timer1.SynchronizingObject = this;
                 void  TimerEventProcessor(object send, ElapsedEventArgs a)
-                { 
+                {
+                    if (lbl_clickValue.Text == "")
+                    {
+                        lbl_clickValue.Text = "0";
+                    }
                     lbl_clickValue.Text = (double.Parse(lbl_clickValue.Text) + increment).ToString();
                 }
                 listbox_PassiveItems.Items.Remove(listbox_PassiveItems.SelectedItem);
